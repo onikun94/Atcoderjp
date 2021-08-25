@@ -1,3 +1,6 @@
 #testfile
 *.out
 *.in
+
+#settingfile
+*.json

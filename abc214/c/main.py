@@ -12,14 +12,14 @@ sunukeSave[currentSunuke] = min(t)
 t[currentSunuke] = MAX
 
 
-while currentSunuke < N - 1:
+while currentSunuke < N:
     takaMin = min(t)
     takaIndexMin = t.index(min(t))
-    if takaMin == currentMin:
-        sunuke[takaIndexMin] = takaMin
-        sunukeSave[takaIndexMin] = takaMin
-        t[takaIndexMin] = MAX
-    elif sunuke[currentSunuke] + s[currentSunuke] < takaMin:
+
+    if min(sunukeSave) != 0:
+        break
+
+    if sunuke[currentSunuke] + s[currentSunuke] < takaMin:
         if sunuke[currentSunuke + 1] == 0:
             sunukeSave[currentSunuke + 1] = sunuke[currentSunuke] + \
                 s[currentSunuke]
@@ -28,10 +28,9 @@ while currentSunuke < N - 1:
     else:
         if sunuke[takaIndexMin] == 0:
             sunukeSave[takaIndexMin] = takaMin
+        currentSunuke = takaIndexMin
         sunuke[takaIndexMin] = takaMin
         t[takaIndexMin] = MAX
 
 for i in range(N):
     print(sunukeSave[i])
-
-# print(t)

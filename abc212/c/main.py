@@ -5,7 +5,7 @@ B = list(map(int, input().split()))
 
 ans1 = 0
 ans2 = ''
-ans3 = 0
+
 if max(A) > max(B):
     ans1 = max(B)
     ans2 = 'A'

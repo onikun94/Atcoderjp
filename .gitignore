@@ -4,3 +4,11 @@
 
 #settingfile
 *.json
+
+#wrong
+wrong.cpp
+
+#ttest
+test*.cpp
+
+.DS_Store
